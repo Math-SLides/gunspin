@@ -1,55 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui, shrink-to-fit=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-
-
-
-    <title>Bomb It 6 Unblocked - ubg235 GameDistribution</title>
-
-    <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
-
-</head>
-
-<body style="overflow:hidden;">
-    <div id="content"></div>
-    <div id="orientation"></div>
-    <div id="loader">Loading..</div>
-    <div id="dummy" style="position:fixed;right:0;bottom:0"></div>
-
-    <script type="text/javascript">
-        var gameName = "bombit-6.min.js";
-
-
-
-
-
-
-        //This all here is for cache busting;
-        function addScript(src, buster, callback) {
-            var s = document.createElement('script');
-            s.setAttribute('src', src + '?v=' + buster);
-            if (typeof callback === 'function') {
-                s.onload = callback;
-            }
-            document.body.appendChild(s);
-        }
-
-
-        addScript('version.js', Date.now(), function() {
-
-            addScript(gameName, version, function() {
-                var g = Game.App.getInstance();
-            });
-
-        });
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>GunSpin Unblocked - ubg235 GameDistribution</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      //var unityInstance = UnityLoader.instantiate("unityContainer", "Build/GunSpin WebGL FinalVersion.json", {onProgress: UnityProgress});
+	  window.gameInstance = UnityLoader.instantiate("unityContainer", "Build/GunSpin WebGL FinalVersion.json");
     </script>
-  <script src="js/analytics_ubg_v1_4.js"></script>
-  <script src="js/ubg235_client_v1_2.js"></script>
-</body>
-
+	<style>
+		* { 
+			margin: 0; padding: 0; 
+		} 
+		body { 
+			background: black; 
+		}
+		div#unityContainer {
+			margin: auto !important;
+			position: absolute !important;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			width: 720px; 
+			height: 480px;
+			width: 150vh !important;
+			height: 100vh !important;
+		}
+		.footer {
+		display:none 
+		}
+	</style>
+  </head>
+  <body style="overflow:hidden;">
+    <div class="webgl-content">
+      <div id="unityContainer"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">GunSpin</div>
+      </div>
+    </div>
+    <script src="js/analytics_ubg_v1_4.js"></script>
+    <script src="js/ubg235_client_v1_2.js"></script>
+  </body>
 </html>
